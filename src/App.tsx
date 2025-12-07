@@ -4,10 +4,11 @@ import {
   Mail, 
   Terminal, 
   Code2, 
-  Briefcase, 
   User, 
-  ExternalLink 
+  ExternalLink
 } from 'lucide-react';
+
+import { Experience } from './components/Experience';
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-              Hi, I'm <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">Eran Sadgan</span>
+              Hi, I'm <span className="bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent">Eran Sadgan</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
               A passionate developer building accessible, pixel-perfect, and performant web experiences.
@@ -70,11 +71,11 @@ function App() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
+                "C# .NET / C++ Embedded",
                 "JavaScript / TypeScript",
                 "React & Next.js",
                 "Node.js",
                 "Tailwind CSS",
-                "PostgreSQL",
                 "Git & CI/CD",
                 "Cloud Architecture",
                 "System Design"
@@ -129,48 +130,8 @@ function App() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-24 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
-              <Briefcase className="text-indigo-600" />
-              Work Experience
-            </h2>
-            
-            <div className="space-y-8">
-              {[
-                {
-                  role: "Senior Frontend Developer",
-                  company: "Tech Corp Inc.",
-                  period: "2023 - Present",
-                  description: "Leading the frontend team in rebuilding the core product dashboard using React and TypeScript. Improved performance by 40%."
-                },
-                {
-                  role: "Full Stack Developer",
-                  company: "StartUp Solutions",
-                  period: "2021 - 2023",
-                  description: "Developed and maintained multiple client projects. Implemented secure authentication and payment processing flows."
-                },
-                {
-                  role: "Junior Web Developer",
-                  company: "Digital Agency",
-                  period: "2020 - 2021",
-                  description: "Collaborated with designers to implement responsive landing pages. Optimized assets for faster load times."
-                }
-              ].map((job, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-indigo-200 hover:border-indigo-500 transition-colors">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-indigo-500"></div>
-                  <h3 className="text-xl font-bold text-slate-900">{job.role}</h3>
-                  <div className="flex items-center gap-2 text-indigo-600 font-medium mb-2">
-                    <span>{job.company}</span>
-                    <span>•</span>
-                    <span className="text-sm">{job.period}</span>
-                  </div>
-                  <p className="text-slate-600 max-w-3xl">{job.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Experience />
+
 
         {/* Projects Section */}
         <section id="projects" className="py-24">
@@ -260,7 +221,7 @@ function App() {
             </div>
             
             <div className="pt-8 border-t border-slate-800 text-slate-500 text-sm">
-              © {new Date().getFullYear()} Eran Sadgan. All rights reserved.
+              © {new Date().getUTCFullYear()} Eran Sadgan. All rights reserved.
             </div>
           </div>
         </section>
